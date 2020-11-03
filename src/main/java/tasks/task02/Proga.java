@@ -8,13 +8,8 @@ package tasks.task02;
  */
 
 class NegativeNumberException extends Exception {
-    private double value;
     NegativeNumberException(double value) {
-        this.value = value;
-    }
-    public String toString() {
-        String nne = "Exception: " + value + " is a negative number!!!";
-        return nne;
+        super(value + " is a negative number!!!");
     }
 }
 
@@ -25,9 +20,13 @@ public class Proga{
         for (int i = 0; i < arr.length; i++) {
             if (i >= 0) {
                 Double sqr = Math.sqrt(i);
+                System.out.println(sqr);
                 int temp = sqr.intValue();
-                if (Math.pow(temp, 2) == i) {
-                    System.out.print(i + " ");
+                System.out.println(temp);
+                double pow = Math.pow(temp, 2);
+                System.out.println(pow);
+                if (pow == i) {
+                    System.out.print(i + "Result ");
                 }
             } else {
                 throw new NegativeNumberException(i);

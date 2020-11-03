@@ -1,57 +1,33 @@
 package tasks.task02;
 
 /**
- * Задание 1. Написать программу ”Hello, World!”. В ходе выполнения программы она должна выбросить исключение и завершиться с ошибкой.
- * <p>
+ * Задание 1. Написать программу ”Hello, World!”.
+ * В ходе выполнения программы она должна выбросить исключение и завершиться с ошибкой.
  * Смоделировав ошибку «NullPointerException»
  * Смоделировав ошибку «ArrayIndexOutOfBoundsException»
  * Вызвав свой вариант ошибки через оператор throw
  */
 
-
-class TestException {
-    static void ArrayIndex() {
-        int i = 0;
-        int[] array = new int[10];
-        while (true) {
-            try {
-                array[i] = i;
-            } catch (Exception ex) {
-                System.out.println("\n" + "Мы вышли за пределы массива" + ex.toString());
-                break;
-            }
-            System.out.println(i);
-            i++;
+public class HelloWorld {
+    public static void main(String[] args) {
+        Object obj = null;
+        int[] array = {1, 2, 3, -7};
+        NullPointerException(obj);
+        ArrayIndex(array);
+        try {
+            if (array[3] < 0)
+                throw new Exception("Третий элемент отрицательный");
+        } catch (Exception e) {
+            System.out.print(e);
         }
     }
 
-    public static void NullPointerException(){
-        int i;
-        int[] array = new int[10];
-        array = null;
-        try{
-            i = array.length;
-        } catch (Exception ex) {
-            System.out.println(" ");
-            System.out.println("Ошибка перехвачена:" + ex.toString());
-        }
+    private static void NullPointerException(Object obj){
+        obj.equals("AAAAA");
+        System.out.println("Hello world");
     }
 
-
-    public static void MyException(Object exp) {
-        if (exp == null) {
-            throw new NullPointerException("a must not be null");
-        }
-        System.out.println("Ошибки нет");
+    private static void ArrayIndex(int[] array) {
+        array[5] = 8;
     }
 }
-
-
-    public class HelloWorld {
-        public static void main(String[] args) {
-            TestException.ArrayIndex();
-            TestException.NullPointerException();
-            TestException.MyException(null);
-        }
-
-    }

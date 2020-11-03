@@ -66,15 +66,15 @@ class Person implements Comparable {
 
     public static String createName(int arrayLength) {
         String eman = null;
-        String namerand = "ABCDE";
+        String namerandom = "ABCDE";
         StringBuilder name = new StringBuilder(5);/*Создаем обьект имя,
-            который будет состоять из символов namerandt*/
+            который будет состоять из символов namerandom*/
 
         for (int k = 0; k < 5; k++) {
-                /*Ниже выдергиваем символ из namerand псевдослучайным образом
+                /*Ниже выдергиваем символ из namerandpm псевдослучайным образом
                 и добавляем его в наше имя*/
-            int index = (int) (namerand.length() * Math.random());
-            eman = name.append(namerand.charAt(index)).toString();
+            int index = (int) (namerandom.length() * Math.random());
+            eman = name.append(namerandom.charAt(index)).toString();
         }
 
         return eman;
