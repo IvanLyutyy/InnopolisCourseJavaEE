@@ -45,7 +45,9 @@ public class Generation {
             }
 
         }
-        return fisrtWord + " " + sentence + mark + " ";
+        return fisrtWord +
+                System.lineSeparator() + sentence + mark +
+                System.lineSeparator();
     }
 
     public static String paragrapfGen(List<String> sentence) {
@@ -53,13 +55,15 @@ public class Generation {
         for (String s : sentence) {
             para.append(s);
         }
-        return para.toString()+"\n\t";
+        return para.toString() +
+                System.lineSeparator();
     }
     public static String textGen(List<String> paragrapg) {
         StringBuilder para = new StringBuilder();
         for (String s : paragrapg) {
             para.append(s);
         }
-        return para.toString()+"\n\t";
+        return para.toString() +
+                System.lineSeparator();
     }
 }

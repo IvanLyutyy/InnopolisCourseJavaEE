@@ -18,9 +18,9 @@ public class Main {
 
     // Демонстрация OutOfMemoryError: Java heap space
     public static void main(String[] args) {
-        List<Long> list = new ArrayList<>();
+        List<Long[]> list = new ArrayList<>();
         for (long i = 0; i < Long.MAX_VALUE; i++) {
-            list.add( i);
+            list.add( new Long[24000]);
             if (i % 1000 == 0) {
                 list.remove(0);
             }
